@@ -9,7 +9,7 @@
             </label>
 
             <div class="flex">
-                <img src="{{ $user->avatar }}" alt="your avatar" width="50" height="50" class="rounded-full mr-2">
+                <img src="{{ $user->avatar }}" alt="your avatar" class="avatar w-h-50 mr-2">
                 <input class="border-2 border-gray-400 p-2 w-full" type="file" name="avatar" id="avatar"
                     accept="image/*">
             </div>
@@ -88,7 +88,7 @@
                 Submit
             </button>
 
-            <a href="profiles/{{ $user->username }}" class="hover:underline">Cancel</a>
+            <a href="/profiles/{{ $user->username }}" class="hover:underline">Cancel</a>
         </div>
     </form>
 </x-app>
