@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tweet;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
 
 class TweetController extends Controller

@@ -16,5 +16,9 @@
                 {{ $tweet->body }}
             </p>
 
+            @auth
+                <x-like-dislike-button :tweet="$tweet" />
+            @endauth
+
         </div>
     </div>

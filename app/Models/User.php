@@ -82,7 +82,12 @@ class User extends Authenticatable
         $friends_ids = $this->follows()->pluck('id');
         return Tweet::whereIn('user_id', $friends_ids)
                     ->orwhere('user_id',$this->id)
+                    ->withLikes()
                     ->latest()->get();
+    }
+
+    public function likes(){
+        return $this->hasMany(Like::class);
     }
 
     public function tweets()
