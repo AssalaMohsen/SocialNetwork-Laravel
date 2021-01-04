@@ -34,6 +34,14 @@ class Tweet extends Model
     }
 
     public function like($user = null, $liked = true){
+
+        if($this->isLikedBy(auth()->user()) && $liked==true ){
+            return $this->likes()->where('user_id', auth()->user()->id)->delete();
+        }
+        elseif($this->isDislikedBy(auth()->user()) && $liked==false){
+            return $this->likes()->where('user_id', auth()->user()->id)->delete();
+        }
+        
         $this->likes()->updateOrCreate( [
             'user_id' => $user ? $user->id : auth()->id(),
         ],
