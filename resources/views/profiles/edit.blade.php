@@ -10,7 +10,7 @@
 
             <div class="flex">
                 <img src="{{ $user->avatar }}" alt="your avatar" class="avatar w-h-50 mr-2">
-                <input class="border-2 border-gray-400 p-2 w-full" type="file" name="avatar" id="avatar"
+                <input class="thinborder-gray p-2 w-full" type="file" name="avatar" id="avatar"
                     accept="image/*">
             </div>
 
@@ -20,11 +20,27 @@
         </div>
 
         <div class="mb-6">
+            <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="cover">
+                Cover
+            </label>
+
+            <div class="flex">
+                <img src="{{ $user->cover }}" alt="your cover" class="cover w-h-50 mr-2">
+                <input class="thinborder-gray p-2 w-full" type="file" name="cover" id="cover"
+                    accept="image/*">
+            </div>
+
+            @error('cover')
+                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+            @enderror
+        </div>
+
+        <div class="mb-6">
             <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="name">
                 Name
             </label>
 
-            <input class="border-2 border-gray-400 p-2 w-full" type="text" name="name" id="name"
+            <input class="thinborder-gray p-2 w-full" type="text" name="name" id="name"
                 value="{{ $user->name }}" required>
 
             @error('name')
@@ -37,7 +53,7 @@
                 Username
             </label>
 
-            <input class="border-2 border-gray-400 p-2 w-full" type="text" name="username" id="username"
+            <input class="thinborder-gray p-2 w-full" type="text" name="username" id="username"
                 value="{{ $user->username }}" required>
 
             @error('username')
@@ -50,7 +66,7 @@
                 Email
             </label>
 
-            <input class="border-2 border-gray-400 p-2 w-full" type="email" name="email" id="email"
+            <input class="thinborder-gray p-2 w-full" type="email" name="email" id="email"
                 value="{{ $user->email }}" required>
 
             @error('email')
@@ -63,7 +79,7 @@
                 Password
             </label>
 
-            <input class="border-2 border-gray-400 p-2 w-full" type="password" name="password" id="password" required>
+            <input class="thinborder-gray p-2 w-full" type="password" name="password" id="password" required>
 
             @error('password')
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
@@ -75,7 +91,7 @@
                 Password Confirmation
             </label>
 
-            <input class="border-2 border-gray-400 p-2 w-full" type="password" name="password_confirmation"
+            <input class="thinborder-gray p-2 w-full" type="password" name="password_confirmation"
                 id="password_confirmation" required>
 
             @error('password_confirmation')

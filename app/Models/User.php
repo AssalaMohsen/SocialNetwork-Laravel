@@ -18,6 +18,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'avatar',
+        'cover',
         'username',
         'name',
         'email',
@@ -46,6 +47,11 @@ class User extends Authenticatable
     public function getAvatarAttribute($value)
     {
         return asset($value?: '/images/default-avatar.png');
+    }
+
+    public function getCoverAttribute($value)
+    {
+        return asset($value?: '/images/default-profile-banner.jpg');
     }
 
     public function follow(User $user)
@@ -83,7 +89,7 @@ class User extends Authenticatable
         return Tweet::whereIn('user_id', $friends_ids)
                     ->orwhere('user_id',$this->id)
                     ->withLikes()
-                    ->latest()->get();
+                    ->latest()->paginate(20);
     }
 
     public function likes(){

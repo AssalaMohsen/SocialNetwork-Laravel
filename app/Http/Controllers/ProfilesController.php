@@ -29,6 +29,7 @@ class ProfilesController extends Controller
         ],
         'name' => ['string', 'required', 'max:255'], 
         'avatar' => ['image'],
+        'cover' => ['image'],
         'email' => [
             'string',
             'required',
@@ -48,6 +49,10 @@ class ProfilesController extends Controller
         if(request('avatar')){
         $attributes['avatar']= request('avatar')->store('avatars');
         }
+        if(request('cover')){
+            $attributes['cover']= request('cover')->store('covers');
+            }
+        
         $user->update($attributes);
         return redirect('/profiles/'.$user->username);
     }
