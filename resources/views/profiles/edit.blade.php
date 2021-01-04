@@ -36,6 +36,18 @@
         </div>
 
         <div class="mb-6">
+            <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="description">
+                Description
+            </label>
+
+            <textarea class="thinborder-gray p-2 w-full" type="text" rows="4" name="description" id="description">{{$user->description}}</textarea>
+
+            @error('description')
+                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+            @enderror
+        </div>
+
+        <div class="mb-6">
             <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="name">
                 Name
             </label>
