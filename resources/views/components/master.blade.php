@@ -19,6 +19,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        button:focus {
+            outline: none;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -26,10 +32,7 @@
         <section class="px-8 py-4 mb-6">
             <header class="container mx-auto">
                 <a class="flex" href="/tweets">
-                    <img src="/images/logo.svg" alt="TwitterClone">
-                    <h1 class="px-2 py-2 text-xl font-semibold">
-                        TwitterClone
-                    </h1>
+                    <img src="/images/logo.ico" alt="TwitterClone" width="32" height="32">
                 </a>
             </header>
         </section>

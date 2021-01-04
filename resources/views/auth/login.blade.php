@@ -15,8 +15,8 @@
                         Email
                     </label>
 
-                    <input class="border-2 border-gray-400 p-2 w-full"
-                           style="outline: none" 
+                    <input class="thinborder-gray p-2 w-full"
+                           style="outline:none;" 
                            type="text"
                            name="email"
                            id="email"
@@ -38,7 +38,7 @@
                         Password
                     </label>
 
-                    <input class="border-2 border-gray-400 p-2 w-full"
+                    <input class="thinborder-gray p-2 w-full"
                          style="outline: none"
                            type="password"
                            name="password"

@@ -47,11 +47,41 @@ Sections
 ========
 */
 
+input,
+textarea {
+    background-color: rgb(21, 32, 43);
+    border-radius: 0.5rem;
+}
+
+input:focus {
+    border: 1px solid rgb(29, 161, 242);
+    box-shadow: 0 0 5px #719ECE;
+}
+
+.thinborder-gray {
+    border: 1px solid rgb(56, 68, 77);
+}
+
+.thinborder-gray-bottom {
+    border-bottom: 1px solid rgb(56, 68, 77);
+}
+
+.thinborder-lightgray {
+    border: 1px solid rgb(136, 153, 166);
+}
+
 .avatar {
     align-self: center;
     object-fit: contain;
     border-radius: 50%;
-    background-color: rgb(233, 233, 233);
+    background-color: #fff;
+}
+
+.cover {
+    border-radius: 1rem;
+    object-fit: cover;
+    width: 700px;
+    height: 200px;
 }
 
 .w-h-50 {
@@ -91,6 +121,8 @@ Improve consistency of default fonts in all browsers. (https://github.com/sindre
 body {
     font-family: system-ui, -apple-system, /* Firefox supports this but not yet `system-ui` */
     'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    background-color: rgb(21, 32, 43);
+    color: white;
 }
 
 

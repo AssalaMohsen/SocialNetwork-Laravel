@@ -1,7 +1,7 @@
 <x-app>
     <header class="mb-6 relative">
         <div class="relative">
-            <img src="/images/default-profile-banner.jpg" alt="" class="mb-2">
+            <img src="{{ $user->cover }}" alt="" class="cover mb-2">
             <img src="{{ $user->avatar }}" alt=""
                 class="avatar w-h-150 mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2" style="left: 50%">
         </div>
@@ -13,7 +13,7 @@
             <div class="flex">
                 @can('edit', $user)
                     <a href="/profiles/{{ $user->username }}/edit"
-                        class="rounded-full border-2 border-gray-300 py-2 px-4 text-black text-xs mr-2">Edit Profile
+                        class="thinborder-gray rounded-full py-2 px-4 text-xs hover:bg-gray-800 mr-2">Edit Profile
                     </a>
                 @endcan
                 <x-follow-button :user="$user"></x-follow-button>

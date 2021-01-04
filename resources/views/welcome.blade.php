@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -14,8 +14,8 @@
     <style>
         html,
         body {
-            background-color: #fff;
-            color: #636b6f;
+            background-color: rgb(21, 32, 43);
+            color: #fff;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
             height: 100vh;
@@ -51,7 +51,7 @@
         }
 
         .links>a {
-            color: #636b6f;
+            color: #fff;
             padding: 0 25px;
             font-size: 13px;
             font-weight: 600;
@@ -72,7 +72,7 @@
 
 
         <div class="content">
-            <img src="/images/logo.svg" alt="TwitterClone" width="100" height="100">
+            <img src="/images/logo.ico" alt="TwitterClone" width="100" height="100">
             <div class="title m-b-md">
                 TwitterClone
             </div>

@@ -1,5 +1,5 @@
 <x-master>
-    <div class="container mx-auto flex justify-center">
+    <div class="container mx-auto flex justify-center mb-10">
         <x-panel>
             <x-slot name="heading">Register</x-slot>
 
@@ -13,8 +13,8 @@
                         Username
                     </label>
 
-                    <input class="border-2 border-gray-400 p-2 w-full"
-                        style="outline: none"
+                    <input class="thinborder-gray p-2 w-full"
+                    style="outline: none"
                            type="text"
                            name="username"
                            id="username"
@@ -34,8 +34,8 @@
                         Name
                     </label>
 
-                    <input class="border-2 border-gray-400 p-2 w-full"
-                        style="outline: none"
+                    <input class="thinborder-gray p-2 w-full"
+                    style="outline: none"
                            type="text"
                            name="name"
                            id="name"
@@ -55,8 +55,8 @@
                         Email
                     </label>
 
-                    <input class="border-2 border-gray-400 p-2 w-full"
-                        style="outline: none"
+                    <input class="thinborder-gray p-2 w-full"
+                    style="outline: none"
                            type="email"
                            name="email"
                            id="email"
@@ -78,8 +78,8 @@
                         Password
                     </label>
 
-                    <input class="border-2 border-gray-400 p-2 w-full"
-                        style="outline: none"
+                    <input class="thinborder-gray p-2 w-full"
+                    style="outline: none"
                            type="password"
                            name="password"
                            id="password"
@@ -98,7 +98,7 @@
                         Password Confirmation
                     </label>
 
-                    <input class="border-2 border-gray-400 p-2 w-full"
+                    <input class="thinborder-gray p-2 w-full"
                          style="outline: none"
                            type="password"
                            name="password_confirmation"
