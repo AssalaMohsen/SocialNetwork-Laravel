@@ -5,7 +5,7 @@
             </a>
         </div>
 
-        <div>
+        <div class="tweet">
             <h5 class="font-bold mb-2">
                 <a href="{{ route('profile', $tweet->user) }}">
                     {{ $tweet->user->name }}

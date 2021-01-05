@@ -84,6 +84,12 @@ input:focus {
     height: 200px;
 }
 
+.tweet {
+    width: 90%;
+    padding-right: 5%;
+    word-wrap: break-word;
+}
+
 .w-h-50 {
     width: 50px;
     height: 50px;
