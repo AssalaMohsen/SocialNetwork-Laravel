@@ -3,30 +3,30 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tweet;
-use Illuminate\Http\Response;
 
 class TweetController extends Controller
 {
     public function index()
     {
         $tweets = request()->user()->timeline();
-        return view('tweets.index', ['tweets'=>$tweets]);
+        return view('tweets.index', ['tweets' => $tweets]);
     }
 
     public function store()
     {
-        $attributes = request()->validate(['body'=>'required|max:255']);
+        $attributes = request()->validate(['body' => 'required|max:255']);
         Tweet::create([
-            'user_id'=>auth()->id(),
-            'body'=> $attributes['body']
+            'user_id' => auth()->id(),
+            'body' => $attributes['body']
         ]);
-
-        return redirect('/tweets');
+        notify('Tweet Published Successfuly.');
+        return back();
     }
 
     public function destroy(Tweet $tweet)
     {
-        Tweet::where('id',$tweet->id)->delete();
+        Tweet::where('id', $tweet->id)->delete();
+        notify('Tweet Deleted Successfuly.');
         return back();
     }
 }
