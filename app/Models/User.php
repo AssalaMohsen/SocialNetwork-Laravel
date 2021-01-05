@@ -70,10 +70,6 @@ class User extends Authenticatable
         $this->follows()->detach($user);
     }
 
-    public function noti(){
-        notify('Tweet Published Successfuly');
-    }
-
     public function toggleFollow(User $user)
     {
         if($this->following($user))

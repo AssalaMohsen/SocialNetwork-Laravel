@@ -12,6 +12,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="http://unpkg.com/turbolinks"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -38,7 +39,6 @@
         </section>
         {{ $slot }}
     </div>
-    <script src="http://unpkg.com/turbolinks"></script>
     <script>
         function countChar(Text) {
             let length = Text.value.length;
