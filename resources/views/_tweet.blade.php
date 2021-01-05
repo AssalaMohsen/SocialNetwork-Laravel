@@ -6,10 +6,15 @@
         </div>
 
         <div class="tweet">
-            <h5 class="font-bold mb-2">
+            <h5 class="flex justify-between font-bold mb-2">
                 <a href="{{ route('profile', $tweet->user) }}">
                     {{ $tweet->user->name }}
                 </a>
+                @if($tweet->user->is(auth()->user()))
+                @auth
+                    <x-delete-button :tweet="$tweet" />
+                @endauth
+                @endif
             </h5>
 
             <p class="text-sm mb-2">

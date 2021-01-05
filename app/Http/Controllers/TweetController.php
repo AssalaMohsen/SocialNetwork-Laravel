@@ -23,4 +23,10 @@ class TweetController extends Controller
 
         return redirect('/tweets');
     }
+
+    public function destroy(Tweet $tweet)
+    {
+        Tweet::where('id',$tweet->id)->delete();
+        return back();
+    }
 }

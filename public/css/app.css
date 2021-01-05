@@ -85,9 +85,13 @@ input:focus {
 }
 
 .tweet {
-    width: 90%;
-    padding-right: 5%;
+    width: 100%;
+    padding-right: 0.8%;
     word-wrap: break-word;
+}
+
+.trash:hover {
+    color: rgb(179, 110, 110);
 }
 
 .w-h-50 {
