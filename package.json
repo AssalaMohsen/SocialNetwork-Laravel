@@ -11,7 +11,7 @@
     },
     "devDependencies": {
         "@tailwindcss/postcss7-compat": "^2.0.2",
-        "axios": "^0.19",
+        "axios": "^0.21.1",
         "bootstrap": "^4.0.0",
         "cross-env": "^7.0",
         "jquery": "^3.2",
@@ -29,6 +29,7 @@
         "@tailwindcss/aspect-ratio": "^0.2.0",
         "@tailwindcss/forms": "^0.2.1",
         "@tailwindcss/typography": "^0.3.1",
+        "alertifyjs": "^1.13.1",
         "autoprefixer": "^9.8.6",
         "postcss": "^7.0.35",
         "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2"

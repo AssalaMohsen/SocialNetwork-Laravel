@@ -38,3 +38,6 @@ Route::middleware('auth')->group(function(){
 });
 
 Route::get('profiles/{user:username}',[ProfilesController::class,'show'])->name('profile');
+Route::get('/notify',function () {
+    return view('notify');
+});

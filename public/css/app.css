@@ -84,6 +84,10 @@ input:focus {
     height: 200px;
 }
 
+.mt {
+    margin-top: 20px;
+}
+
 .tweet {
     width: 100%;
     padding-right: 0.8%;
@@ -92,6 +96,12 @@ input:focus {
 
 .trash:hover {
     color: rgb(179, 110, 110);
+}
+
+.ajs-message.ajs-custom {
+    color: rgb(136, 153, 166);
+    background-color: rgb(44, 54, 64);
+    border: none;
 }
 
 .w-h-50 {
