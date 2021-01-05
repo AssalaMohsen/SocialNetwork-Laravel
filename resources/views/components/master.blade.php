@@ -39,6 +39,18 @@
         {{ $slot }}
     </div>
     <script src="http://unpkg.com/turbolinks"></script>
+    <script src="http://code.jquery.com/jquery-1.5.js"></script>
+    <script>
+      function countChar(Text) {
+        let length = Text.value.length;
+        if (length > 255) {
+            Text.value = Text.value.substring(0, 255);
+            alert('Tweet must not exceed 255 characters.');
+        } else {
+          $('#charNum').text(255 - length);
+        }
+      };
+    </script>
 </body>
 
 </html>
