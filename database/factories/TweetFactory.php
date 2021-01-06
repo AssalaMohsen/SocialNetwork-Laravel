@@ -24,7 +24,7 @@ class TweetFactory extends Factory
     {
         return [
             'user_id'=> User::factory(),
-            'body'=> $this->faker->sentence
+            'body'=> $this->faker->sentence(25)
         ];
     }
 }
