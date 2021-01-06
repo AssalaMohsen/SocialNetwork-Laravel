@@ -5,6 +5,7 @@ use App\Http\Controllers\FollowsController;
 use App\Http\Controllers\ProfilesController;
 use App\Http\Controllers\TweetController;
 use App\Http\Controllers\TweetLikesController;
+use App\Http\Controllers\UserNotificationsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,7 @@ Auth::routes();
 
 Route::middleware('auth')->group(function(){
     Route::get('/tweets',[TweetController::class,'index'])->name('home');
+    Route::get('/tweets/{tweet:id}',[TweetController::class,'show']);
     Route::post('/tweets',[TweetController::class,'store']);
     Route::post('/tweets/{tweet}/like',[TweetLikesController::class,'store']);
     Route::delete('/tweets/{tweet}/like',[TweetLikesController::class,'destroy']);
@@ -35,6 +37,7 @@ Route::middleware('auth')->group(function(){
     Route::get('profiles/{user:username}/edit',[ProfilesController::class,'edit'])->middleware('can:edit,user');
     Route::patch('profiles/{user:username}',[ProfilesController::class,'update'])->middleware('can:edit,user');
     Route::get('/explore',[ExploreController::class,'index']);
+    Route::get('notifications', [UserNotificationsController::class, 'show']);
 });
 
 Route::get('profiles/{user:username}',[ProfilesController::class,'show'])->name('profile');

@@ -25,6 +25,11 @@
         button:focus {
             outline: none;
         }
+
+        .profile-lnk:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 
@@ -69,6 +74,7 @@
                 modal.style.display = "none";
             }
         }
+
     </script>
     @notifyJs
 </body>

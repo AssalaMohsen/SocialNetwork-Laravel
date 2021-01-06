@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Notifications\DislikeNotification;
+use App\Notifications\LikeNotification;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -40,6 +42,13 @@ class Tweet extends Model
         }
         elseif($this->isDislikedBy(auth()->user()) && $liked==false){
             return $this->likes()->where('user_id', auth()->user()->id)->delete();
+        }
+
+        if($liked==true){
+            $this->user->notify(new LikeNotification($user,$this));
+        }
+        else{
+            $this->user->notify(new DislikeNotification($user,$this));
         }
         
         $this->likes()->updateOrCreate( [

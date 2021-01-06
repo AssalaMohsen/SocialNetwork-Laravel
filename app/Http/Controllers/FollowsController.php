@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Notifications\FollowNotification;
 use Illuminate\Http\Request;
 
 class FollowsController extends Controller

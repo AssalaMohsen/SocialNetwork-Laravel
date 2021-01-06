@@ -12,6 +12,13 @@ class TweetController extends Controller
         return view('tweets.index', ['tweets' => $tweets]);
     }
 
+    public function show(Tweet $tweet)
+    {
+        $tweet = Tweet::where('id', $tweet->id)
+                    ->withLikes()->get();
+        return view('tweets.show',['tweet'=>$tweet[0]]);
+    }
+
     public function store()
     {
         $attributes = request()->validate(['body' => 'required|max:255']);
@@ -27,6 +34,9 @@ class TweetController extends Controller
     {
         Tweet::where('id', $tweet->id)->delete();
         notify('Tweet Deleted Successfuly.');
+        if(url()->previous() == ("http://127.0.0.1:8000/tweets/".$tweet->id)){
+            return redirect('/tweets');
+        }
         return back();
     }
 }

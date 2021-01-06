@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tweet;
+use App\Notifications\LikeNotification;
 use Illuminate\Http\Request;
 
 class TweetLikesController extends Controller
