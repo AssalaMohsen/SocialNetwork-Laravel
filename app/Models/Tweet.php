@@ -44,10 +44,10 @@ class Tweet extends Model
             return $this->likes()->where('user_id', auth()->user()->id)->delete();
         }
 
-        if($liked==true){
+        if($liked==true && !($this->user->id==auth()->user()->id)){
             $this->user->notify(new LikeNotification($user,$this));
         }
-        else{
+        elseif($liked==false && !($this->user->id==auth()->user()->id)){
             $this->user->notify(new DislikeNotification($user,$this));
         }
         
