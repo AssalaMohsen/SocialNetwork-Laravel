@@ -9,7 +9,7 @@ A social media web application similar to twitter, Implemented using Laravel 8, 
 - Added a pop-up flash message when a user publishes a tweet or follows someone.
 - display the number of remaining characters allowed when writing a tweet.
 - Allow tweets to be deleted.
-- Add support for notifications.
+- Added support for notifications.
 
 ## How to use
 - Clone the repository with git clone
