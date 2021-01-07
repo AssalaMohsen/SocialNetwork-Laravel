@@ -75,6 +75,21 @@
             }
         }
 
+        function triggerClick(e,tag) {
+            document.querySelector(tag).click();
+        }
+
+        function displayImage(e,tag) {
+            if (e.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    document.querySelector(tag).setAttribute('src', e.target.result);
+                    document.querySelector(tag).style.display='block';
+                }
+                reader.readAsDataURL(e.files[0]);
+            }
+        }
+
     </script>
     @notifyJs
 </body>

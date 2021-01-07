@@ -3,37 +3,21 @@
         @csrf
         @method('PATCH')
 
-        <div class="mb-6">
-            <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="avatar">
-                Avatar
-            </label>
-
-            <div class="flex">
-                <img src="{{ $user->avatar }}" alt="your avatar" class="avatar w-h-50 mr-2">
-                <input class="thinborder-gray p-2 w-full" type="file" name="avatar" id="avatar"
-                    accept="image/*">
-            </div>
-
-            @error('avatar')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-            @enderror
-        </div>
-
-        <div class="mb-6">
-            <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="cover">
-                Cover
-            </label>
-
-            <div class="flex">
-                <img src="{{ $user->cover }}" alt="your cover" class="cover w-h-50 mr-2">
-                <input class="thinborder-gray p-2 w-full" type="file" name="cover" id="cover"
-                    accept="image/*">
+        <header class="mb-8 relative">
+            <div class="relative">
+                <button type="button"><img src="{{ $user->cover }}" alt="your cover" class="myImg cover" onClick="triggerClick(this,'#cover')" id="coverDisplay"></button>
+                <button type="button"><img src="{{ $user->avatar }}" alt="your avatar" class="myImg avatar w-h-150 mr-2 absolute bottom-0 transform -translate-x-1/2" style="left: 50%;top:50%;" onClick="triggerClick(this,'#avatar')" id="avatarDisplay"></button>
+                <input type="file" name="cover" id="cover" onChange="displayImage(this,'#coverDisplay')" accept=".png,.gif,.jpg,.webp" style="display: none;">
+                <input type="file" name="avatar" id="avatar" onChange="displayImage(this,'#avatarDisplay')" accept=".png,.gif,.jpg,.webp" style="display: none;">
             </div>
 
             @error('cover')
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
             @enderror
-        </div>
+            @error('avatar')
+                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+            @enderror
+        </header>
 
         <div class="mb-6">
             <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="description">

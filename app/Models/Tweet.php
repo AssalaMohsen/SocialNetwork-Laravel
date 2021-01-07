@@ -26,6 +26,14 @@ class Tweet extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function getAttachedAttribute($value)
+    {
+        if($value==null){
+            return null;
+        }
+        return asset($value);
+    }
+
     public function isLikedBy($user){
         return (bool) $user->likes->where('tweet_id', $this->id)->where('liked', true)->count();
     }

@@ -21,11 +21,16 @@ class TweetController extends Controller
 
     public function store()
     {
-        $attributes = request()->validate(['body' => 'required|max:255']);
+        $attributes = request()->validate(['body' => 'required|max:255','attached' => ['image']]);
+        if(request('attached')){
+            $attributes['attached']= request('attached')->store('attached');
+        }
         Tweet::create([
             'user_id' => auth()->id(),
-            'body' => $attributes['body']
+            'body' => $attributes['body'],
+            'attached'=>$attributes['attached']??null
         ]);
+        
         notify('Tweet Published Successfuly.');
         return back();
     }

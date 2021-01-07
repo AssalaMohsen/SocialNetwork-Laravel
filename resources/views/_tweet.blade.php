@@ -20,6 +20,13 @@
             <p class="text-sm mb-2">
                 {{ $tweet->body }}
             </p>
+            @if ($tweet->attached)
+            <div class="flex">
+                <img src="{{ $tweet->attached }}" alt="" onclick="displayImg(this)" class="rounded-lg myImg mb-2"
+                style="width: 600px;height:400px;object-fit:cover;">
+            </div>
+            @endif
+            
 
             @auth
                 <x-like-dislike-button :tweet="$tweet" />
