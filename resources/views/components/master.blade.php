@@ -75,20 +75,54 @@
             }
         }
 
-        function triggerClick(e,tag) {
+        function triggerClick(e, tag) {
             document.querySelector(tag).click();
         }
 
-        function displayImage(e,tag) {
+        function displayImage(e, tag) {
             if (e.files[0]) {
                 var reader = new FileReader();
                 reader.onload = function(e) {
                     document.querySelector(tag).setAttribute('src', e.target.result);
-                    document.querySelector(tag).style.display='block';
+                    document.querySelector(tag).style.display = 'block';
                 }
                 reader.readAsDataURL(e.files[0]);
             }
         }
+
+        const recordVerticalOffset = () => {
+
+            localStorage.setItem('pageVerticalPosition', window.scrollY);
+        }
+
+        // Only save window position after scrolling stops
+        const throttleScroll = (recordVerticalOffset, delay) => {
+
+            let time = Date.now();
+
+            return () => {
+                if ((time + delay - Date.now()) < 0) {
+                    recordVerticalOffset();
+                    time = Date.now();
+                }
+            }
+        }
+
+        // Scroll Event Listener
+        window.addEventListener('scroll', throttleScroll(recordVerticalOffset, 0));
+
+
+        // DESTINATION PAGE
+        // ================
+
+        const repositionPage = () => {
+
+            let pageVerticalPosition = localStorage.getItem('pageVerticalPosition') || 0;
+
+            window.scrollTo(0, pageVerticalPosition);
+        }
+
+        window.addEventListener('load', repositionPage);
 
     </script>
     @notifyJs

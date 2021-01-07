@@ -2,7 +2,6 @@
     <header class="mb-6 relative">
         <div class="relative">
             <img src="{{ $user->cover }}" alt="" onclick="displayImg(this)" class="cover myImg mb-2">
-            @include('notify::messages')
             <img src="{{ $user->avatar }}" onclick="displayImg(this)" alt=""
                 class="avatar myImg w-h-150 mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2" style="left: 50%">
                 <div id="myModal" class="modal">
@@ -31,4 +30,5 @@
     </header>
     @include('_timeline',['tweets'=>$tweets])
     {{$tweets->links()}}
+    @include('notify::messages')
 </x-app>

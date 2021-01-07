@@ -1,5 +1,4 @@
 <x-app>
-    @include('notify::messages')
     <div>
         @foreach ($users as $user)
         <div class="flex justify-between">
@@ -19,4 +18,5 @@
 
         {{ $users->links() }}
     </div>
+    @include('notify::messages')
 </x-app>
