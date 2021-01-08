@@ -12,15 +12,11 @@
         <div style="max-width: 270px">
             <h2 class="font-bold text-2xl">{{ $user->name }}</h2>
             <p class="text-m text-gray-500">{{'@'.$user->username }}</p>
-            <p class="text-sm">
-                {{$user->description}}
-            </p>
             <p class="text-sm text-gray-500">Joined {{ $user->created_at->diffForHumans() }}</p>
             <div class="flex">
             <a href="/profiles/{{$user->username}}/following" class="flex profile-lnk text-sm text-gray-500 pr-2"><p class="font-bold text-gray-100 pr-1">{{$user->follows->count()}}</p> Following</a>
             <a href="/profiles/{{$user->username}}/followers" class="flex profile-lnk text-sm text-gray-500"><p class="font-bold text-gray-100 pr-1">{{$user->followers()->count()}}</p> Followers</a>
             </div>
-            <a href="/profiles/{{$user->username}}" class="block mt-2 text-lg font-bold hover:text-gray-500">Tweets</a>
         </div>
         <div class="flex">
             @can('edit', $user)
@@ -31,4 +27,8 @@
             <x-follow-button :user="$user"></x-follow-button>
         </div>
     </div>
+    <p class="text-sm">
+        {{$user->description}}
+    </p>
+    <a href="/profiles/{{$user->username}}" class="block mt-2 text-lg font-bold hover:text-gray-500">Tweets</a>
 </header>

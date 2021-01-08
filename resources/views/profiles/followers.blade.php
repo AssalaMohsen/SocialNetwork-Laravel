@@ -18,7 +18,7 @@
             <x-follow-button :user="$follower"></x-follow-button>
         </div>
         @empty
-        <p class="text-sm text-gray-300">No followings yet.</p>
+        <p class="text-sm text-gray-300">No followers yet.</p>
         @endforelse
 
         {{ $followers->links() }}
