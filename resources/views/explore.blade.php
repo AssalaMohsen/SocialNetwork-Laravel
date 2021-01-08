@@ -9,7 +9,8 @@
                 >
 
                 <div>
-                    <h4 class="font-bold">{{ '@' . $user->username }}</h4>
+                    <h2 class="font-bold">{{$user->name}}</h2>
+                    <p class="font-bold text-xs text-gray-500">{{ '@' . $user->username }}</p>
                 </div>
             </a>
             <x-follow-button :user="$user"></x-follow-button>

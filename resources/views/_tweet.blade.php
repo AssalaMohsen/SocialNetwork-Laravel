@@ -24,6 +24,10 @@
             <div class="flex">
                 <img src="{{ $tweet->attached }}" alt="" onclick="displayImg(this)" class="rounded-lg myImg mb-2"
                 style="width: 600px;height:400px;object-fit:cover;">
+                <div id="myModal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="img01">
+                  </div>    
             </div>
             @endif
             

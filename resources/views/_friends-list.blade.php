@@ -2,7 +2,7 @@
     <h3 class="font-bold text-xl mb-4">Following</h3>
 
     <ul>
-        @forelse (auth()->user()->follows()->take(7)->get() as $user)
+        @forelse (auth()->user()->follows()->take(5)->get() as $user)
             <li class="{{ $loop->last ? '' : 'mb-4' }}">
                 <div>
                     <a href="{{ route('profile', $user) }}" class="flex items-center text-sm">

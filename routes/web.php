@@ -36,6 +36,8 @@ Route::middleware('auth')->group(function(){
     Route::post('profiles/{user:username}/follow',[FollowsController::class,'store']);
     Route::get('profiles/{user:username}/edit',[ProfilesController::class,'edit'])->middleware('can:edit,user');
     Route::patch('profiles/{user:username}',[ProfilesController::class,'update'])->middleware('can:edit,user');
+    Route::get('profiles/{user:username}/followers',[ProfilesController::class,'followers']);
+    Route::get('profiles/{user:username}/following',[ProfilesController::class,'following']);
     Route::get('/explore',[ExploreController::class,'index']);
     Route::get('notifications', [UserNotificationsController::class, 'show']);
 });

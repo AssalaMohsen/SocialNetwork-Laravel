@@ -2,7 +2,7 @@
     <form method="POST" action="/tweets"  enctype="multipart/form-data">
         @csrf
         <textarea name="body" style="outline: none" class="w-full" onkeyup="countChar(this)" placeholder="What's up doc?" required></textarea>
-        <button type="button"><i class="fa fa-file-image-o mb-3" style="font-size:24px" onClick="triggerClick(this,'#attached')"></i></button>
+        <button type="button"><i class="fa fa-file-image-o hover:text-gray-500 mb-3" style="font-size:24px" onClick="triggerClick(this,'#attached')"></i></button>
         <img src="" alt="" class="rounded-lg"
                 style="display:none;width: 100px;height:100px;object-fit:cover;" id="attached-img">
         <input class="thinborder-gray p-2 w-full" type="file" name="attached" id="attached" onChange="displayImage(this,'#attached-img')"

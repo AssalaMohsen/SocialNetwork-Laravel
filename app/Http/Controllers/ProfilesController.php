@@ -57,4 +57,12 @@ class ProfilesController extends Controller
         $user->update($attributes);
         return redirect('/profiles/'.$user->username);
     }
+
+    public function followers(User $user){
+        return view('profiles.followers',['followers'=>$user->followers()->paginate(10),'user'=>$user]);
+    }
+
+    public function following(User $user){
+        return view('profiles.following',['followings'=>$user->follows()->paginate(10),'user'=>$user]);
+    }
 }
