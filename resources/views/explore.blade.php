@@ -13,7 +13,7 @@
                     <p class="font-bold text-xs text-gray-500">{{ '@' . $user->username }}</p>
                 </div>
             </a>
-            <x-follow-button :user="$user"></x-follow-button>
+            @livewire('follow-user', ['user' => $user,'authUser'=>auth()->user()])
         </div>
         @endforeach
 
