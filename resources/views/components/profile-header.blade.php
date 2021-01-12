@@ -24,7 +24,7 @@
                     class="thinborder-gray rounded-full py-2 px-4 text-xs hover:bg-gray-800 mr-2">Edit Profile
                 </a>
             @endcan
-            <x-follow-button :user="$user"></x-follow-button>
+            @livewire('follow-user', ['user' => $user,'authUser'=>auth()->user()])
         </div>
     </div>
     <p class="text-sm">

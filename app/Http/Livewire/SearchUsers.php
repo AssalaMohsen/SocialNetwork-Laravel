@@ -52,7 +52,7 @@ class SearchUsers extends Component
     public function updatedQuery()
     {
         $this->users = User::where('name', 'like', '%' . $this->query . '%')
-            ->get();
+        ->take(5)->get();
     }
 
     public function render()
