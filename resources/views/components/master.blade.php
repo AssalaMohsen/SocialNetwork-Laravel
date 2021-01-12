@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    @livewireStyles
     @notifyCss
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -41,13 +42,7 @@
                     <img src="/images/logo.ico" alt="TwitterClone" width="32" height="32">
                 </a>
                 @auth
-                    <div class="form-group">
-                        <input type="text" class="thinborder-gray rounded p-2" style="outline: none;" name="username"
-                            id="username" autocomplete="off" placeholder="Search for users">
-                        <i class="fa fa-search ml-2" id="search-icon"
-                            style="font-size:24px;outline:none;cursor: pointer"></i>
-                        <div id="user_list" class="suggestions"></div>
-                    </div>
+                    @livewire('search-users')
                 @endauth
             </header>
         </section>
@@ -137,49 +132,8 @@
 
         window.addEventListener('load', repositionPage);
 
-        function removeFocus() {
-            document.getElementById('searchbar').classList.remove('searchbar');
-            document.getElementById('search-icon').classList.remove('text-gray-500');
-
-        }
-
-        function searchbarfocus() {
-            document.getElementById('searchbar').classList.add('searchbar');
-            document.getElementById('search-icon').classList.add('text-gray-500');
-        }
-
-        $(document).ready(function() {
-
-            $('#username').on('keyup', function() {
-                var query = $(this).val();
-                $.ajax({
-
-                    url: "{{ route('home') }}",
-
-                    type: "GET",
-
-                    data: {
-                        'username': query
-                    },
-
-                    success: function(data) {
-
-                        $('#user_list').html(data);
-                    }
-                })
-                // end of ajax call
-            });
-
-
-            $(document).on('click', 'li', function() {
-
-                var value = $(this).text();
-                $('#username').val(value);
-                $('#user_list').html("");
-            });
-        });
-
     </script>
+    @livewireScripts
     @notifyJs
 </body>
 
