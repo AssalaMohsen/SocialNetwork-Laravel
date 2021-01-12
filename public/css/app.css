@@ -173,6 +173,11 @@ ul.suggestions li:hover .suggested_input {
     height: 40px;
 }
 
+.w-h-30 {
+    width: 30px;
+    height: 30px;
+}
+
 .w-h-60 {
     width: 60px;
     height: 60px;
