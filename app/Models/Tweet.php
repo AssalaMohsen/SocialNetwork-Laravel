@@ -34,6 +34,12 @@ class Tweet extends Model
         return asset($value);
     }
 
+    
+    public function getTweetWithLikes($tweetId){
+        $tweet = Tweet::where('id',$tweetId)->withLikes()->get();
+        return $tweet[0];
+    }
+
     public function isLikedBy($user){
         return (bool) $user->likes->where('tweet_id', $this->id)->where('liked', true)->count();
     }

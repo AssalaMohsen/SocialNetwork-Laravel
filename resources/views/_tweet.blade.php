@@ -33,7 +33,7 @@
             
 
             @auth
-                <x-like-dislike-button :tweet="$tweet" />
+                @livewire('like-dislike-tweet', ['tweet' => $tweet])
             @endauth
 
         </div>

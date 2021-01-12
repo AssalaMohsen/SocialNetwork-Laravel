@@ -1,9 +1,7 @@
 <div class="flex">
-    <form method="POST" action="/tweets/{{ $tweet->id }}/like">
-        @csrf
-
+    <form wire:submit.prevent="updateLike()">
         <div
-            class="flex items-center text-xs mr-4 {{ $tweet->isLikedBy(auth()->user()) ? 'text-blue-500' : 'text-gray-500' }}">
+            class="flex items-center text-xs mr-4 {{ $liked ? 'text-blue-500' : 'text-gray-500' }}">
             <button type="submit">
                 <svg viewBox="0 0 20 20" class="mr-1 w-3">
                     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -19,12 +17,9 @@
         </div>
     </form>
 
-    <form method="POST" action="/tweets/{{ $tweet->id }}/like">
-        @csrf
-        @method('DELETE')
-
+    <form wire:submit.prevent="updateDislike()">
         <div
-            class="flex items-center text-xs {{ $tweet->isDislikedBy(auth()->user()) ? 'text-blue-500' : 'text-gray-500' }}">
+            class="flex items-center text-xs {{ $disliked ? 'text-blue-500' : 'text-gray-500' }}">
             <button type="submit">
                 <svg viewBox="0 0 20 20" class="mr-1 w-3">
                     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
