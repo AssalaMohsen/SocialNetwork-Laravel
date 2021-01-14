@@ -6,8 +6,10 @@ use App\Http\Controllers\ProfilesController;
 use App\Http\Controllers\TweetController;
 use App\Http\Controllers\TweetLikesController;
 use App\Http\Controllers\UserNotificationsController;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,4 +47,24 @@ Route::middleware('auth')->group(function(){
 Route::get('profiles/{user:username}',[ProfilesController::class,'show'])->name('profile');
 Route::get('/notify',function () {
     return view('notify');
+});
+
+Route::get('/auth/redirect', function () {
+    return Socialite::driver('github')->redirect();
+});
+
+Route::get('/auth/callback', function () {
+    $githubUser = Socialite::driver('github')->user();
+   $user = User::firstOrCreate([
+            'email'=> $githubUser->getEmail(),
+            'username'=>$githubUser->getNickname(),
+            'name'=>$githubUser->getName(),
+            'provider_id'=>$githubUser->getId()
+        ]);
+
+    Auth::login($user);
+
+    return redirect('/tweets');
+
+    // $user->token
 });

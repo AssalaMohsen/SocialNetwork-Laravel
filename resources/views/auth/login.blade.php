@@ -17,12 +17,11 @@
 
                     <input class="thinborder-gray p-2 w-full"
                            style="outline:none;" 
-                           type="text"
+                           type="email"
                            name="email"
                            id="email"
                            autocomplete="email"
                            value="{{ old('email') }}"
-                           required
                     >
 
                     @error('email')
@@ -79,6 +78,11 @@
                     >
                         Login
                     </button>
+                   <a href="/auth/redirect"> <button type="button"
+                            class="bg-blue-400 text-white rounded-full py-2 px-4 hover:bg-blue-500 mr-2"
+                    >
+                        Login with GitHub
+                    </button></a>
 
                     <a href="{{ route('password.request') }}" class="text-xs text-gray-700">Forgot Your Password?</a>
                 </div>
