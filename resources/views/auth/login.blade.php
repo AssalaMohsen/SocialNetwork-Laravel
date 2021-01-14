@@ -72,19 +72,20 @@
                 </div>
 
 
-                <div>
+                <div class="flex">
                     <button type="submit"
                             class="bg-blue-400 text-white rounded-full py-2 px-4 hover:bg-blue-500 mr-2"
                     >
                         Login
                     </button>
                    <a href="/auth/redirect"> <button type="button"
-                            class="bg-blue-400 text-white rounded-full py-2 px-4 hover:bg-blue-500 mr-2"
+                            class="flex bg-blue-400 text-white rounded-full py-2 px-4 hover:bg-blue-500 mr-2"
                     >
-                        Login with GitHub
+                        <span class="pt-1">Login with GitHub</span> <img class="pl-2" src="/images/GitHub-Mark-Light-32px.png"/>
                     </button></a>
-
-                    <a href="{{ route('password.request') }}" class="text-xs text-gray-700">Forgot Your Password?</a>
+                </div>
+                <div class="pt-3 text-right">
+                <a href="{{ route('password.request') }}" class="text-xs text-gray-700">Forgot Your Password?</a>
                 </div>
             </form>
         </x-panel>
