@@ -26,7 +26,7 @@
                     </label>
 
                     <input class="thinborder-gray p-2 w-full" style="outline:none;" type="email" name="email" id="email"
-                        autocomplete="email" value="{{ old('email') }}">
+                        autocomplete="email" value="{{ old('email') }}" required>
 
                     @error('email')
                         <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
@@ -40,7 +40,7 @@
                     </label>
 
                     <input class="thinborder-gray p-2 w-full" style="outline: none" type="password" name="password"
-                        id="password" autocomplete="current-password">
+                        id="password" autocomplete="current-password" required>
 
                     @error('password')
                         <p class="text-red-500 text-xs mt-2">{{ $message }}</p>

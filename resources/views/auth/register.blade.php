@@ -99,6 +99,7 @@
                            name="password"
                            id="password"
                            autocomplete="new-password"
+                           required
                     >
 
                     @error('password')
@@ -119,6 +120,7 @@
                            name="password_confirmation"
                            id="password_confirmation"
                            autocomplete="new-password"
+                           required
                     >
 
                     @error('password_confirmation')
