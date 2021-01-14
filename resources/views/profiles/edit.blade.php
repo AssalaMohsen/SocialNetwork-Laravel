@@ -75,7 +75,7 @@
                 Password
             </label>
 
-            <input class="thinborder-gray p-2 w-full" type="password" name="password" id="password" required>
+            <input class="thinborder-gray p-2 w-full" type="password" name="password" id="password">
 
             @error('password')
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
@@ -88,7 +88,7 @@
             </label>
 
             <input class="thinborder-gray p-2 w-full" type="password" name="password_confirmation"
-                id="password_confirmation" required>
+                id="password_confirmation">
 
             @error('password_confirmation')
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>

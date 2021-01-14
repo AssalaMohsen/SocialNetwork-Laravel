@@ -81,8 +81,8 @@
                 @auth
                     <a href="{{ url('/tweets') }}">Home</a>
                 @else
-                    <a href="{{ route('login') }}">Login</a>
-                    <a href="{{ route('register') }}">Register</a>
+                    <a href="{{ route('login') }}">SignIn</a>
+                    <a href="{{ route('register') }}">SignUp</a>
                 @endauth
             </div>
         </div>

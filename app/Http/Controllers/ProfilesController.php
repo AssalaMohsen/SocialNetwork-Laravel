@@ -38,15 +38,16 @@ class ProfilesController extends Controller
             'max:255',
             Rule::unique('users')->ignore($user),
         ],
-        'password' => [
-            'string',
-            'required',
-            'min:8',
-            'max:255',
-            'confirmed',//make sure the password confirmation match
-        ]
         ]);
+        if(request('password')){
+            $attributes = request()->validate(['password' => [
+                'string',
+                'min:8',
+                'max:255',
+                'confirmed',//make sure the password confirmation match
+            ]]);
         $attributes['password']= Hash::make($attributes['password']);
+        }
         if(request('avatar')){
         $attributes['avatar']= request('avatar')->store('avatars');
         }

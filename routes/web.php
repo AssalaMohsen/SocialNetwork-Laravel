@@ -49,11 +49,11 @@ Route::get('/notify',function () {
     return view('notify');
 });
 
-Route::get('/auth/redirect', function () {
+Route::get('github/auth/redirect', function () {
     return Socialite::driver('github')->redirect();
 });
 
-Route::get('/auth/callback', function () {
+Route::get('github/auth/callback', function () {
     $githubUser = Socialite::driver('github')->user();
    $user = User::firstOrCreate([
             'email'=> $githubUser->getEmail(),
@@ -67,4 +67,22 @@ Route::get('/auth/callback', function () {
     return redirect('/tweets');
 
     // $user->token
+});
+
+Route::get('google/auth/redirect', function () {
+    return Socialite::driver('google')->redirect();
+});
+
+Route::get('google/auth/callback', function () {
+    $googleUser = Socialite::driver('google')->user();
+    $user = User::firstOrCreate([
+        'email'=> $googleUser->getEmail(),
+        'username'=>str_replace('@gmail.com', '', $googleUser->getEmail()),
+        'name'=>$googleUser->getName(),
+        'provider_id'=>$googleUser->getId()
+    ]);
+
+Auth::login($user);
+
+return redirect('/tweets');
 });
