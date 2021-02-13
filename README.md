@@ -10,6 +10,8 @@ A social media web application similar to twitter, Implemented using Laravel 8, 
 - display the number of remaining characters allowed when writing a tweet.
 - Allow tweets to be deleted.
 - Added support for notifications.
+- Added Laravel Livewire for more interactivity.
+- Added Authentication with Github and Google. 
 
 ## How to use
 - Clone the repository with git clone
